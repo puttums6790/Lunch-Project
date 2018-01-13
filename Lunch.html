@@ -37,10 +37,24 @@
   <p>This is an application you can use to find food nearby and plan lunch with your classmates. 
   	<br>Set up a lunch yourself or join one already planned.</p>
   </div>
-  <p><a class="btn btn-primary btn-lg" href="CreateGroup.html">Create Group</a></p>
-  <p><a class="btn btn-primary btn-lg" href="FindGroup.html">Find Group</a></p>
-  <p><a class="btn btn-primary btn-lg" href="Groups.html">My Groups</a></p>
+
+  <p><a href="#loginScreen" class="btn btn-primary btn-lg" href="CreateGroup.html">Create Group</a></p>
+  <p><a href="#loginScreen" class="btn btn-primary btn-lg" href="FindGroup.html">Find Group</a></p>
+  <p><a href="#loginScreen" class="btn btn-primary btn-lg" href="Groups.html">My Groups</a></p>
+  <!-- jQuery 
+          <div align="center">
+              <br><br><br><br>
+              <a href="#loginScreen" class="button">Click here to Log In</a>
+          </div> -->
+          <div id="loginScreen">
+            <a href="#" class="cancel">&times;</a>
+          </div>
+          <div id="cover" >
 </div>
+
+</div>
+
+
 <div class="footer">
   © copyright 2018
 </div>
@@ -50,7 +64,7 @@
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 	<!-- google maps-->
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+	<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script> -->
 </script>
 </body>
 </html>
