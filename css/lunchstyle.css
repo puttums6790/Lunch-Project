@@ -1,5 +1,5 @@
 .jumbotron {
-	height: 650px;
+    height: 650px;
   background-image: url("images/jumbotron1.png");
   background-size: cover;
   color: white;
@@ -58,8 +58,9 @@
 	background: gray;
 	border:5px solid #cccccc;
 	border-radius:10px;
-	top: 200px;
+	top: 100px;
 	left: 400px;
+    padding: 50px 10px 10px 10px;
 }
 #loginScreen:target, #loginScreen:target + #cover{
     display:block;
@@ -79,4 +80,8 @@
     text-decoration:none;
     text-align:center;
     font-weight:bold;
+}
+
+#submitLogin {
+    background-color: blue;
 }
