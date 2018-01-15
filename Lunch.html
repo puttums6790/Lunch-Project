@@ -2,69 +2,98 @@
 <html>
 <head>
 	<title></title>
+
+  <!-- Bootstrap CDN-->
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/yeti/bootstrap.min.css" rel="stylesheet" integrity="sha384-xpQNcoacYF/4TKVs2uD3sXyaQYs49wxwEmeFNkOUgun6SLWdEbaCOv8hGaB9jLxt" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/lunchstyle.css">
+
 </head>
 <body>
-	<!-- Bootstrap CDN-->
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/yeti/bootstrap.min.css" rel="stylesheet" integrity="sha384-xpQNcoacYF/4TKVs2uD3sXyaQYs49wxwEmeFNkOUgun6SLWdEbaCOv8hGaB9jLxt" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/lunchstyle.css">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Let's Do Lunch</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+	
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Let's Do Lunch</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarColor02">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="Lunch.html">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="CreateGroup.html">Create Group</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="FindGroup.html">Find Group</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Groups.html">My Groups</a>
-      </li>
-    </ul>
-    
-  </div>
-</nav>
-<div class="jumbotron">
-	<div class ="jumbotext">
-  <h1>Welcome to Let's Do Lunch</h1>
-  <p>This is an application you can use to find food nearby and plan lunch with your classmates. 
-  	<br>Set up a lunch yourself or join one already planned.</p>
-  </div>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="Lunch.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="CreateGroup.html">Create Group</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="FindGroup.html">Find Group</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Groups.html">My Groups</a>
+        </li>
+      </ul>
 
-  <p><a href="#loginScreen" class="btn btn-primary btn-lg" href="CreateGroup.html">Create Group</a></p>
-  <p><a href="#loginScreen" class="btn btn-primary btn-lg" href="FindGroup.html">Find Group</a></p>
-  <p><a href="#loginScreen" class="btn btn-primary btn-lg" href="Groups.html">My Groups</a></p>
+    </div>
+  </nav>
+  <div class="jumbotron">
+   <div class ="jumbotext">
+    <h1>Welcome to Let's Do Lunch</h1>
+    <p>This is an application you can use to find food nearby and plan lunch with your classmates. 
+     <br>Set up a lunch yourself or join one already planned.</p>
+   </div>
+
+   <p><a href="#" class="btn btn-primary btn-lg" id="CreateGroup">Create Group</a></p>
+   <p><a href="#" class="btn btn-primary btn-lg" id="FindGroup">Find Group</a></p>
+   <p><a href="#" class="btn btn-primary btn-lg" id="Groups">My Groups</a></p>
   <!-- jQuery 
           <div align="center">
               <br><br><br><br>
               <a href="#loginScreen" class="button">Click here to Log In</a>
-          </div> -->
-          <div id="loginScreen">
-            <a href="#" class="cancel">&times;</a>
+            </div> -->
+
+            <div id="loginScreen">
+
+              <a href="#" class="cancel">&times;</a>
+
+              <form>
+
+                <h3>Please Enter a Username and Password below to log in or create a new account.</h3>
+
+                <div class="form-group">
+                  <label for="Username">Username</label>
+                  <input type="text" class="form-control" id="username">
+                </div>
+
+                <div class="form-group">
+                  <label for="Password">Password</label>
+                  <input type="text" class="form-control" id="password">
+                </div>
+
+                <p><a type="submit" class="btn btn-primary" id="submitLogin">Login or Create Account</a></p>
+
+              </form>
+
+            </div>
+            <div id="cover" >
+            </div>
+
           </div>
-          <div id="cover" >
-</div>
-
-</div>
 
 
-<div class="footer">
-  © copyright 2018
-</div>
+          <div class="footer">
+            © copyright 2018
+          </div>
 
-	<!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Firebase Reference -->
-    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-	<!-- google maps-->
-	<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script> -->
-</script>
-</body>
-</html>
+          <!-- jQuery -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+          <!-- Firebase Reference -->
+          <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+          <!--<script src="js/lunchcode.js"></script>-->
+          <script src="js/login.js"></script>
+          <!-- google maps-->
+          <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script> -->
+        </script>
+      </body>
+      </html>
