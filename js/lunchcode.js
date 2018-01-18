@@ -8,14 +8,7 @@
     storageBucket: "",
     messagingSenderId: "442112808193"
   };
+  
   firebase.initializeApp(config);
-
+  
   var database = firebase.database
-
-  $('#trigger-top-login-modal').click(function(){
-    $('#top-login-overlay, #top-login-modal').show();
-  });
-
-  $('#top-login-overlay, #top-login-modal span').click(function(){
-    $('#top-login-overlay, #top-login-modal').hide();
-  });
