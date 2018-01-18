@@ -1,64 +1,102 @@
 
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBvEEsX_emQu9Um3wzAgNZv0m2I9WBDuVg",
-    authDomain: "lunch-group-project.firebaseapp.com",
-    databaseURL: "https://lunch-group-project.firebaseio.com",
-    projectId: "lunch-group-project",
-    storageBucket: "",
-    messagingSenderId: "442112808193"
-  };
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyBvEEsX_emQu9Um3wzAgNZv0m2I9WBDuVg",
+  authDomain: "lunch-group-project.firebaseapp.com",
+  databaseURL: "https://lunch-group-project.firebaseio.com",
+  projectId: "lunch-group-project",
+  storageBucket: "",
+  messagingSenderId: "442112808193"
+};
 
-  firebase.initializeApp(config);
-  var database = firebase.database();
+firebase.initializeApp(config);
+var database = firebase.database();
 
-  //sets users initial logged in status based on session storage
-  var isLoggedIn = false;
-  
-  function checkLogin(path) {
-    if(path) {
+//sets users initial logged in status based on session storage
+var isLoggedIn = false;
+
+/*if (sessionStorage.getItem(isLoggedIn) == null) {
+  isLoggedIn = false;
+}
+isLoggedIn = sessionStorage.getItem("isLoggedIn");
+
+if (isLoggedIn == "false") {
+  isLoggedIn = false;
+}
+
+if (isLoggedIn == "true") {
+  isLoggedIn = true;
+}*/
+
+//initializing variables
+var buttonPressed;
+var newLink;
+var userExists;
+var groupName;
+var groupTheme;
+var groupParticipants;
+var groupDate;
+
+
+//function to check if user is logged in already
+function checkLogin(path) {
+  if(path) {
     if (isLoggedIn) {
       window.location = path +'.html';
     } else {
       //window.location.href("Lunch.html")
       $('#loginScreen').show();
     }
-    } else {
-      if(isLoggedIn) {
-        window.location = "Lunch.html";
-      }
+  } else {
+    if(isLoggedIn) {
+      window.location = "Lunch.html";
     }
   }
+}
 
-  /*if (sessionStorage.getItem(isLoggedIn) == null) {
-    isLoggedIn = false;
-  }
-  isLoggedIn = sessionStorage.getItem("isLoggedIn");
+function addGroup() {
+  
+  groupName = $("#groupName").val().trim();
+  groupParticipants = $("#groupParticipants").val().trim();
+  groupTheme = $("#groupTheme").val().trim();
+  console.log(groupParticipants);
+  console.log(groupTheme);
+  var username = sessionStorage.getItem("username", username);
 
-  if (isLoggedIn == "false") {
-    isLoggedIn = false;
-  }
+  today = new Date();
+  groupDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
-  if (isLoggedIn == "true") {
-    isLoggedIn = true;
-  }*/
-
-  var buttonPressed;
-  var newLink;
-  var userID = 0;
-  var userExists;
-
-  $('#top-login-overlay, #top-login-modal span').click(function(){
-    $('#top-login-overlay, #top-login-modal').hide();
+  database.ref().child("Users").child(username).child("MyGroups").push({
+    groupName: groupName,
+    groupDate: groupDate,
+    groupParticipants: groupParticipants,
+    groupTheme: groupTheme
   });
+  
+  database.ref().orderByChild("username").equalTo(username).once("value",snapshot => {
+    const userData = snapshot.val().child("Users").child(username).child("MyGroups");
+    console.log(userData)
+  })
+
+  console.log(userData);
+
+}
 
 //when a home screen button is clicked
 $(".btn-lg").on("click", function(event) {
 
   //determins id of button pressed
   buttonPressed = $(this).attr("id");
+
+  //checks if logged in
   checkLogin(buttonPressed);
 
+})
+
+$("#createGroupBtn").on("click", function(event) {
+  event.preventDefault();
+  addGroup();
+  window.location = 'CreateGroup.html';
 })
 
 //submitting username and login to log in
@@ -73,12 +111,11 @@ $("#submitLogin").on("click", function(event) {
   sessionStorage.clear();
 
   // Store all content into localStorage
-  sessionStorage.setItem("usernamename", username);
+  sessionStorage.setItem("username", username);
   sessionStorage.setItem("password", password);
 
   //sets login status to true
   isLoggedIn = true;
-  userID++;
   sessionStorage.setItem("isLoggedIn", isLoggedIn);
 
   database.ref().orderByChild("username").equalTo(username).once("value",snapshot => {
@@ -92,14 +129,15 @@ $("#submitLogin").on("click", function(event) {
     //if user does not already exist in firebase, save data to firebase
     else {
       console.log("does not exist");
-      database.ref().push({
-        userID: "user"+userID,
+      database.ref().child("Users").child(username).set({
         username: username,
         password: password,
-        dateAdded: firebase.database.ServerValue.TIMESTAMP
       });
     }
+
+    //check if user is logged in
     checkLogin();
+
   });
 
 })
