@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Place searches</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/myGroups.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+  	<div id="main"> 
+  		<div class="clearAll">
+  		</div>
+	    <div id="map">
+	    </div>
+	    <div id="well">
+	    </div>
+	</div>
+	<div class="overlay">
+		<div class="overlayBackground">
+		</div>
+		<div class="lightBox">
+			<form>
+				<h2>Proide your group information</h2>
+				Group Name: <br>
+				<input type="text" id="groupName"><br>
+				Date: <br>
+				<input type="text" id="groupDate"><br>
+				Participants: <br>
+				<input type="text" id="groupParticipants"><br>
+				Ice Breaker / Theme: <br>
+				<input type="text" id="groupTheme"><br><br>
+				<input type="submit" id="createGroupBtn" value="Create Group">
+			</form>
+
+		</div>
+	</div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm5IkK3Hj9tQOlbMbgzqo1CAvZRUAUE-g&libraries=places&callback=initMap" async defer></script>
+    <script src="js/myGroups.js"></script>
+  </body>
+</html>
