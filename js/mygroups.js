@@ -30,7 +30,7 @@
             var label = label0.toString();
             var id = "restaurant" + label;
             createMarker(results[i], label);
-            //console.log(results[i]);
+            console.log(results[i]);
             $("#well").append(
             	"<h2>" + label + ": " + results[i].name + "</h2>" +
             	"<p><strong>Rating: </strong>" + results[i].rating + "</p>" +
