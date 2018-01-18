@@ -4,6 +4,7 @@
 
       var map;
       var infowindow;
+      $(".overlay").hide();
 
       function initMap() {
         var pyrmont = {lat: 41.896294, lng: -87.618799};
@@ -25,23 +26,29 @@
       function callback(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           for (var i = 0; i < results.length; i++) {
-            createMarker(results[i]);
+          	var label0 = i + 1;
+            var label = label0.toString();
+            var id = "restaurant" + label;
+            createMarker(results[i], label);
             console.log(results[i]);
             $("#well").append(
-            	"<h2>" + results[i].name + "</h2>" +
+            	"<h2>" + label + ": " + results[i].name + "</h2>" +
             	"<p><strong>Rating: </strong>" + results[i].rating + "</p>" +
             	"<p><strong>Price Level: </strong>" + results[i].price_level + "</p>" +
             	"<p><strong>Address: </strong>" + results[i].vicinity + "</p>" +
+            	"<button id='" + id + "'>Select Restaurant</button>" +
             	"<br>");
+            createClickEvent(id);
           }
         }
       }
 
-      function createMarker(place) {
+      function createMarker(place, label) {
         var placeLoc = place.geometry.location;
         var marker = new google.maps.Marker({
           map: map,
-          position: place.geometry.location
+          position: place.geometry.location,
+          label: label
         });
 
         google.maps.event.addListener(marker, 'click', function() {
@@ -49,3 +56,9 @@
           infowindow.open(map, this);
         });
       }
+
+      function createClickEvent(id) {
+	      $("#"+id).on("click", function() {
+	      	$(".overlay").show();
+	      });
+  		}
