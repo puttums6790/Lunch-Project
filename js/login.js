@@ -32,9 +32,10 @@ if (isLoggedIn == "true") {
 var buttonPressed;
 var newLink;
 var userExists;
-var place;
-var date;
-var today;
+var groupName;
+var groupTheme;
+var groupParticipants;
+var groupDate;
 
 
 //function to check if user is logged in already
@@ -54,16 +55,30 @@ function checkLogin(path) {
 }
 
 function addGroup() {
-
-  place = $("#myGroup").text();
+  
+  groupName = $("#groupName").val().trim();
+  groupParticipants = $("#groupParticipants").val().trim();
+  groupTheme = $("#groupTheme").val().trim();
+  console.log(groupParticipants);
+  console.log(groupTheme);
+  var username = sessionStorage.getItem("username", username);
 
   today = new Date();
-  date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  groupDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
-  database.ref().child("Users").child(username).child("MyGroups").set({
-    place: place,
-    time: time
+  database.ref().child("Users").child(username).child("MyGroups").push({
+    groupName: groupName,
+    groupDate: groupDate,
+    groupParticipants: groupParticipants,
+    groupTheme: groupTheme
   });
+  
+  database.ref().orderByChild("username").equalTo(username).once("value",snapshot => {
+    const userData = snapshot.val().child("Users").child(username).child("MyGroups");
+    console.log(userData)
+  })
+
+  console.log(userData);
 
 }
 
@@ -78,6 +93,12 @@ $(".btn-lg").on("click", function(event) {
 
 })
 
+$("#createGroupBtn").on("click", function(event) {
+  event.preventDefault();
+  addGroup();
+  window.location = 'CreateGroup.html';
+})
+
 //submitting username and login to log in
 $("#submitLogin").on("click", function(event) {
 
@@ -90,7 +111,7 @@ $("#submitLogin").on("click", function(event) {
   sessionStorage.clear();
 
   // Store all content into localStorage
-  sessionStorage.setItem("usernamename", username);
+  sessionStorage.setItem("username", username);
   sessionStorage.setItem("password", password);
 
   //sets login status to true
@@ -111,7 +132,6 @@ $("#submitLogin").on("click", function(event) {
       database.ref().child("Users").child(username).set({
         username: username,
         password: password,
-        dateAdded: firebase.database.ServerValue.TIMESTAMP
       });
     }
 
