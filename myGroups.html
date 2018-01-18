@@ -1,42 +1,89 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Place searches</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/myGroups.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  </head>
-  <body>
-  	<div id="main"> 
-  		<div class="clearAll">
-  		</div>
-	    <div id="map">
-	    </div>
-	    <div id="well">
-	    </div>
-	</div>
-	<div class="overlay">
-		<div class="overlayBackground">
-		</div>
-		<div class="lightBox">
-			<form>
-				<h2>Proide your group information</h2>
-				Group Name: <br>
-				<input type="text" id="groupName"><br>
-				Date: <br>
-				<input type="text" id="groupDate"><br>
-				Participants: <br>
-				<input type="text" id="groupParticipants"><br>
-				Ice Breaker / Theme: <br>
-				<input type="text" id="groupTheme"><br><br>
-				<input type="submit" id="createGroupBtn" value="Create Group">
-			</form>
+<head>
+	<title>My Groups</title>
+</head>
+<body>
+	<!-- Bootstrap CDN-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/yeti/bootstrap.min.css" rel="stylesheet" integrity="sha384-xpQNcoacYF/4TKVs2uD3sXyaQYs49wxwEmeFNkOUgun6SLWdEbaCOv8hGaB9jLxt" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/lunchstylebs.css">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Let's Do Lunch</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-		</div>
-	</div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm5IkK3Hj9tQOlbMbgzqo1CAvZRUAUE-g&libraries=places&callback=initMap" async defer></script>
-    <script src="js/myGroups.js"></script>
-  </body>
+<<<<<<< HEAD
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="Lunch.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="CreateGroup.html">Create Group</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="FindGroup.html">Find Group</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="Groups.html">My Groups</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Lunch Group Name</th>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+      <th scope="col">Restaurant</th>
+      <th scope="col">Address</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>John's Lunch Group</td>
+      <td>01/17/2018</td>
+      <td>19:00</td>
+      <td>Giordano's</td>
+      <td>730 North Rush Street, Chicago</td>
+      <td><button type="button" class="btn btn-primary btn-sm">Leave Group</button></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Maddy's Lunch Group</td>
+      <td>01/20/2018</td>
+      <td>12:00</td>
+      <td>Bandera</td>
+      <td>535 North Michigan Avenue, Chicago</td>
+      <td><button type="button" class="btn btn-primary btn-sm">Leave Group</button></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Pat's Lunch Group</td>
+      <td>01/20/2018</td>
+      <td>18:00</td>
+      <td>Gino's East</td>
+      <td>535 North Michigan Avenue, Chicago</td>
+      <td><button type="button" class="btn btn-primary btn-sm">Leave Group</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+	<!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+	<!-- google maps-->
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</script>
+</body>
 </html>
