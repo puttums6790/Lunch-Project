@@ -40,33 +40,51 @@
 
   <div class="overlay">
 
+    <div class="overlayBackground">
+    </div>
+
     <div class="lightBox">
 
+      <button type="button" class="close" aria-label="Close" id="lightboxClose">
+      <span aria-hidden="true">&times;</span>
+      </button>
+
+      <h2 class="lightBoxHeader">Group Details</h2>
+
+       <div class="lightBoxRight">
+        <div id="restaurantHead" class="detailsLabel">Restaurant:</div>
+        <div id="restaurantName" class="value">Giordano's</div>
+        <div id="addressHead" class="detailsLabel">Address:</div>
+        <div id="address" class="value">730 North Rush Street, Chicago</div>
+        <div id="ratingHead" class="detailsLabel">Customer Rating (of 5):</div>
+        <div id="rating" class="value">4.2</div>
+        <div id="priceHead" class="detailsLabel">Price Level (of 5):</div>
+        <div id="price" class="value">2</div>
+      </div>
+
       <div class="lightBoxLeft">
-        <div id="groupHead">Group Name:</div>
-        <div id="groupName"></div>
-        <div id="dateHead">Date:</div>
-        <div id="dateVal"></div>
-        <div id="participantsHead">Participants:</div>
-        <div id="participants"></div>
-        <div id="themeHead">Theme:</div>
-        <div id="theme"></div>
+        <div id="groupHead" class="detailsLabel">Group Name:</div>
+        <div id="groupName" class="value">Za and the art of Zen</div>
+        <div id="dateHead" class="detailsLabel">Date:</div>
+        <div id="dateVal" class="value">1/20/2018</div>
+        <div id="themeHead" class="detailsLabel">Theme:</div>
+        <div id="theme" class="value">How to keep your cool when you are deep into the coding zone but you hit a wall and your float: right just won't line-up.</div>
+        <div id="participantsHead" class="detailsLabel">Participants:</div>
+        <div id="participants" class="value">User1, User2, User3</div>
+        <br>
+        <button id="joinBtn" type="button" class="btn btn-primary btn-sm">Join Group</button>
       </div>
 
-      <div class="lightBoxRight">
-        <div id="restaurantHead">Restaurant:</div>
-        <div id="restaurantName"></div>
-        <div id="addressHead">Address:</div>
-        <div id="address"></div>
-      </div>
-
+      
     </div>
 
   </div>
 
   <main class="main">
-    <h2>Join a Lunch Group</h2>
-    <h4>Click on a group to see it's details and decide if you want to join it for lunch</h4>
+    <div class="sectionHead">
+      <h2>Join a Lunch Group</h2>
+      <h4>Click on a group to see it's details and decide if you want to join it for lunch</h4>
+    </div>
     <table class="table table-hover">
     <thead>
       <tr class="groupRow">
@@ -74,6 +92,7 @@
         <th scope="col">Date</th>
         <th scope="col">Participants / Spots</th>
         <th scope="col">Restaurant</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -82,18 +101,21 @@
         <td>1/20/2018</td>
         <td>3 / 5</td>
         <td>Bandera</td>
+        <td><button id="detailsBtn" type="button" class="btn btn-primary btn-sm">View Details</button>
       </tr>
       <tr class="groupRow">
         <td>Za and the art of Zen</td>
         <td>1/20/2018</td>
         <td>2 / 5</td>
         <td>Giordano's</td>
+        <td><button id="detailsBtn" type="button" class="btn btn-primary btn-sm">View Details</button>
       </tr>
       <tr class="groupRow">
         <td>Kegs and Eggs (not recommended)</td>
         <td>1/20/2018</td>
         <td>8 / 10</td>
         <td>Yolk Streeterville</td>
+        <td><button id="detailsBtn" type="button" class="btn btn-primary btn-sm">View Details</button>
       </tr>
     </tbody>
   </table>

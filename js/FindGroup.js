@@ -7,3 +7,7 @@ $(".overlay").hide();
 $(".groupRow").on("click", function() {
 	$(".overlay").show();
 });
+
+$("#lightboxClose").on("click", function() {
+	$(".overlay").hide();
+});
