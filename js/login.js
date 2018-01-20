@@ -20,6 +20,7 @@ var newLink;
 var userExists;
 var groupName;
 var groupTheme;
+var groupTime;
 var groupParticipants;
 var groupDate;
 var isLoggedIn;
@@ -89,7 +90,7 @@ function refreshMyGroups() {
       //appends each firebase stored element to it's respective table column
       $("#myGroupsTable > tbody").append("<tr><td>" + tableCount + "</td><td>" 
         + userData[id].groupName + "</td><td>" + userData[id].groupDate + "</td><td>" 
-        + "hold for time" + "</td><td>" + userData[id].groupParticipants + "</td><td>" 
+        + userData[id].groupTime + "</td><td>" + userData[id].groupParticipants + "</td><td>" 
         + userData[id].groupTheme + "</td><td>" +"hold for restaurant"+ "</td><td>" 
         + "hold for address" + "</td><td>" +"<button class='leaveButton'id="+ id +">Remove Group</button>"+"</td></tr>");
     }
@@ -110,10 +111,11 @@ function refreshMyGroups() {
 function addGroup() {
 
   //gets values for group info from user input
-  var groupName = $("#groupName").val().trim();
+  groupName = $("#groupName").val().trim();
   groupParticipants = $("#groupParticipants").val().trim();
   groupTheme = $("#groupTheme").val().trim();
   groupDate = $("#groupDate").val().trim();
+  groupTime = $("#groupTime").val().trim();
 
   //gets username from session storage
   var username = sessionStorage.getItem("username", username);
@@ -121,6 +123,7 @@ function addGroup() {
   //adds group info to firebase
   database.ref().child("Users").child(username).child("MyGroups").push({
     groupName: groupName,
+    groupTime: groupTime,
     groupDate: groupDate,
     groupParticipants: groupParticipants,
     groupTheme: groupTheme
