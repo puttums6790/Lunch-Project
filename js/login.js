@@ -28,10 +28,12 @@ var isLoggedIn;
 
 
 //sets users initial logged in status based on session storage
-if (sessionStorage.getItem(isLoggedIn) == null) {
+
+isLoggedIn = sessionStorage.getItem('isLoggedIn');
+
+if (isLoggedIn == null) {
   isLoggedIn = false;
 }
-isLoggedIn = sessionStorage.getItem("isLoggedIn");
 
 if (isLoggedIn == "false") {
   isLoggedIn = false;
@@ -91,8 +93,8 @@ function refreshMyGroups() {
       $("#myGroupsTable > tbody").append("<tr><td>" + tableCount + "</td><td>" 
         + userData[id].groupName + "</td><td>" + userData[id].groupDate + "</td><td>" 
         + userData[id].groupTime + "</td><td>" + userData[id].groupParticipants + "</td><td>" 
-        + userData[id].groupTheme + "</td><td>" +"hold for restaurant"+ "</td><td>" 
-        + "hold for address" + "</td><td>" +"<button class='leaveButton'id="+ id +">Remove Group</button>"+"</td></tr>");
+        + userData[id].groupTheme + "</td><td>" +userData[id].restaurantName+ "</td><td>" 
+        + userData[id].restaurantAddress + "</td><td>" +"<button class='leaveButton'id="+ id +">Remove Group</button>"+"</td></tr>");
     }
 
     //if a delete group button is clicked, removes it from firebase and reloads page
@@ -126,7 +128,9 @@ function addGroup() {
     groupTime: groupTime,
     groupDate: groupDate,
     groupParticipants: groupParticipants,
-    groupTheme: groupTheme
+    groupTheme: groupTheme,
+    restaurantName: restaurantName,
+    restaurantAddress: restaurantAddress
   });
 }
 
@@ -137,6 +141,19 @@ $(".btn-lg").on("click", function(event) {
 
   //determins id of button pressed
   buttonPressed = $(this).attr("id");
+
+  //checks if logged in and acts according to function
+  checkLogin(buttonPressed);
+
+})
+
+
+
+//on home screen, if button on nav bar or to go to another page is clicked
+$(".nav-link").on("click", function(event) {
+
+  //determins id of button pressed
+  buttonPressed = $(this).attr("name");
 
   //checks if logged in and acts according to function
   checkLogin(buttonPressed);

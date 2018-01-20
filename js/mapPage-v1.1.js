@@ -99,8 +99,7 @@
                 "address" : results.vicinity
              });
       }
-
-
+      
       $("#createGroupBtn").on("click", function(event) {
 
         event.preventDefault();
@@ -111,9 +110,11 @@
         groupTime = $("#groupTime").val();
         groupTheme = $("#groupTheme").val();
 
-        // window.location.href = "myGroups.html";
+        window.location.href = "myGroups.html";
 
         console.log(groupName, groupDate, groupParticipants, groupTime, groupTheme);
 
       });
+
+
 
