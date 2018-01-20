@@ -1,5 +1,5 @@
 
-.overlay {
+.overlayBackground {
 	display: block;
 	position: fixed;
 	top: 0px;
@@ -12,6 +12,7 @@
 }
 
 .lightBox {
+	padding: 10px;
 	display: block;
 	position: absolute;
 	top: 15%;
@@ -26,4 +27,18 @@
 
 .main {
 	z-index: 50;
+}
+
+.lightBoxLeft {
+	width: 250px;
+	float: left;
+}
+
+.lightBoxRight {
+	width: 250px;
+	float: right;
+}
+
+.heading {
+	font-weight: bold;
 }
