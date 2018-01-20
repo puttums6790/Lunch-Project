@@ -26,7 +26,7 @@
         <a class="nav-link" href="FindGroup.html">Find Group</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Groups.html">My Groups</a>
+        <a class="nav-link" href="myGroups.html">My Groups</a>
       </li>
     </ul>
     
@@ -34,46 +34,22 @@
 </nav>
 
 
-<table class="table table-hover">
+<table class="table table-hover" id="myGroupsTable">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Lunch Group Name</th>
       <th scope="col">Date</th>
       <th scope="col">Time</th>
+      <th scope="col"># of Participants</th>
+      <th scope="col">Icebreaker</th>
       <th scope="col">Restaurant</th>
       <th scope="col">Address</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>John's Lunch Group</td>
-      <td>01/17/2018</td>
-      <td>19:00</td>
-      <td>Giordano's</td>
-      <td>730 North Rush Street, Chicago</td>
-      <td><button type="button" class="btn btn-primary btn-sm">Leave Group</button></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Maddy's Lunch Group</td>
-      <td>01/20/2018</td>
-      <td>12:00</td>
-      <td>Bandera</td>
-      <td>535 North Michigan Avenue, Chicago</td>
-      <td><button type="button" class="btn btn-primary btn-sm">Leave Group</button></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Pat's Lunch Group</td>
-      <td>01/20/2018</td>
-      <td>18:00</td>
-      <td>Gino's East</td>
-      <td>535 North Michigan Avenue, Chicago</td>
-      <td><button type="button" class="btn btn-primary btn-sm">Leave Group</button></td>
-    </tr>
+
   </tbody>
 </table>
 
@@ -82,7 +58,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-	<!-- google maps-->
+
+    <script src="js/login.js"></script>
+	
+  <!-- google maps-->
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </script>
 </body>
