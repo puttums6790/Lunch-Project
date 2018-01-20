@@ -1,36 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-</head>
-<body>
-	<!-- Bootstrap CDN-->
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/yeti/bootstrap.min.css" rel="stylesheet" integrity="sha384-xpQNcoacYF/4TKVs2uD3sXyaQYs49wxwEmeFNkOUgun6SLWdEbaCOv8hGaB9jLxt" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/lunchstylebs.css">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Let's Do Lunch</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarColor02">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="Lunch.html">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="CreateGroup.html">Create Group</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="FindGroup.html">Find Group</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="myGroups.html">My Groups</a>
-      </li>
-    </ul>
-    
+	<title>Find a Group: Let's Do Lunch</title>
+
+  <!-- Bootstrap CDN-->
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/yeti/bootstrap.min.css" rel="stylesheet" integrity="sha384-xpQNcoacYF/4TKVs2uD3sXyaQYs49wxwEmeFNkOUgun6SLWdEbaCOv8hGaB9jLxt" crossorigin="anonymous">
+
+  <!-- Local CSS file -->
+  <link rel="stylesheet" href="css/FindGroup.css">
+
+</head>
+
   </div>
-</nav>
+
+  <main class="main">
+    <div class="sectionHead">
+      <h2>Join a Lunch Group</h2>
+      <h4>Click on a group to see it's details and decide if you want to join it for lunch</h4>
+    </div>
+    <table class="table table-hover">
+    <thead>
+      <tr class="groupRow">
+        <th scope="col">Group Name</th>
+        <th scope="col">Date</th>
+        <th scope="col">Participants / Spots</th>
+        <th scope="col">Restaurant</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="groupRow">
+        <td>Tacos and Tech Talk</td>
+        <td>1/20/2018</td>
+        <td>3 / 5</td>
+        <td>Bandera</td>
+        <td><button id="detailsBtn" type="button" class="btn btn-primary btn-sm">View Details</button>
+      </tr>
+      <tr class="groupRow">
+        <td>Za and the art of Zen</td>
+        <td>1/20/2018</td>
+        <td>2 / 5</td>
+        <td>Giordano's</td>
+        <td><button id="detailsBtn" type="button" class="btn btn-primary btn-sm">View Details</button>
+      </tr>
+      <tr class="groupRow">
+        <td>Kegs and Eggs (not recommended)</td>
+        <td>1/20/2018</td>
+        <td>8 / 10</td>
+        <td>Yolk Streeterville</td>
+        <td><button id="detailsBtn" type="button" class="btn btn-primary btn-sm">View Details</button>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+  </main>
+
+
+
+
 
 
 
@@ -38,8 +69,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-	<!-- google maps-->
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+    <!-- local JS script for this page -->
+    <script src="js/FindGroup.js"></script>
+	</script>
 </script>
 </body>
 </html>
