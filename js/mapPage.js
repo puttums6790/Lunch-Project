@@ -32,12 +32,14 @@
             createMarker(results[i], label);
             console.log(results[i]);
             $("#well").append(
-            	"<h2>" + label + ": " + results[i].name + "</h2>" +
-            	"<p><strong>Rating: </strong>" + results[i].rating + "</p>" +
+            	"<div class='restitem'><h2>" + label + ": " + results[i].name + "</h2>" +
+            	"<p><strong>Rating: </strong>" + results[i].rating + "/5</p>" +
             	"<p><strong>Price Level: </strong>" + results[i].price_level + "</p>" +
             	"<p><strong>Address: </strong>" + results[i].vicinity + "</p>" +
-            	"<button id='" + id + "'>Select Restaurant</button>" +
-            	"<br>");
+              
+            	"<button id='" + id + "' class='btn btn-primary'>Select Restaurant</button>" +
+
+            	"<div class='clearfix'></div></div>");
             createClickEvent(id);
           }
         }
@@ -62,3 +64,22 @@
 	      	$(".overlay").show();
 	      });
   		}
+
+//var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on <span> (x), close the modal
+$(".close").on('click', function() {
+  
+    $('.overlay').hide();
+})
+$(function() {
+    // <div id="container"></div> will be an empty div
+    $('.overlay').load('/#map');
+});
+
+// When the user clicks anywhere outside of the modal, close it
+//window.onclick = function(event) {
+//    if (event.target == modal) {
+//        modal.style.display = "none";
+//    }
+//}

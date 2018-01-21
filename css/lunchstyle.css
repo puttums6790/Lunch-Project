@@ -17,6 +17,11 @@
 .btn {
 	float: left;
 	margin: 5px;
+
+
+}
+.clearfix {
+    clear:both;
 }
 .footer {
 	width: 100%;
@@ -28,15 +33,20 @@
 	font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-.button
+button
 {
 	position: static;
 	width: 150px;
 	padding: 10px;
-	background-color: #FF8C00;
+	
 	box-shadow: -8px 8px 10px 3px rgba(0,0,0,0.2);
     font-weight:bold;
 	text-decoration:none;
+    color: #fff;
+    background-color: #008cba;
+    border-color: #008cba;
+
+
 }
 #cover{
     position:fixed;
@@ -85,4 +95,21 @@
 
 #submitLogin {
     color: black;
+}
+h2 {
+    /*text-shadow:1px 1px 1px rgba(61,165,255,1);*/
+    font-weight:bold;
+    text-decoration:underline;
+    color:#000000;
+    letter-spacing:0pt;
+    word-spacing:2pt;
+    font-size:38px;
+    text-align:left;
+    font-family:palatino linotype, palatino, serif;line-height:1;
+    padding-top: 10px;
+}
+#createGroupBtn {
+  color: #fff;
+  background-color: #43ac6a;
+  border-color: #43ac6a;
 }

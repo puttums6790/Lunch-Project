@@ -1,7 +1,7 @@
  #map {
         display: block;
         position: fixed;
-        height: 800px;
+        height: 700px;
         width: 50%;
         left: 50%;
         border: 2px solid black;
@@ -12,11 +12,20 @@
         margin: 0;
         padding: 0;
       }
+      body {
+            background-image: url("images/table.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
+      }
   #well {
     position: absolute;
     top: 60px;
     width: 40%;
     padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: gray;
+    
   }
   .overlayBackground {
     display: block;
@@ -47,7 +56,24 @@
   
   #main {
     z-index: 50;
-  }
+    height: 100%;
+
+    background-repeat: repeat-y;
+      }
   .clearAll {
     clear: both;
   }
+p {
+  color: black
+}
+.lbhead {
+  font-weight:bold;
+    text-decoration:none;
+    color:#000000;
+    letter-spacing:0pt;
+    word-spacing:2pt;
+    font-size:38px;
+    text-align:center;
+    font-family:palatino linotype, palatino, serif;line-height:1;
+    padding-top: 10px;
+}
