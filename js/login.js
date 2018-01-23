@@ -37,10 +37,12 @@ if (isLoggedIn == null) {
 
 if (isLoggedIn == "false") {
   isLoggedIn = false;
+  $("#loginLink").text("");
 }
 
 if (isLoggedIn == "true") {
   isLoggedIn = true;
+  $("#loginLink").text("Logout");
 }
 
 
@@ -149,6 +151,22 @@ $(".btn-lg").on("click", function(event) {
 
 
 
+//on home screen, login/logout is clicked
+$("#loginLink").on("click", function(event) {
+
+  isLoggedIn = false;
+
+  //Clear localStorage
+  sessionStorage.clear();
+
+  window.location = 'Lunch.html';
+
+  $("#loginLink").text("");
+
+})
+
+
+
 //on home screen, if button on nav bar or to go to another page is clicked
 $(".nav-link").on("click", function(event) {
 
@@ -213,8 +231,6 @@ $("#submitLogin").on("click", function(event) {
   });
 
 })
-
-
 
 //refreshes my groups list on load of page - this will display on My Groups table
 refreshMyGroups()
