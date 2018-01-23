@@ -1,0 +1,102 @@
+
+
+.overlay {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	z-index: 75;
+}
+
+
+.overlayBackground {
+	display: block;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: black;
+	opacity: 0.75;
+	height: 100%;
+	width: 100%;
+	z-index: 100;
+}
+
+.lightBox {
+	padding: 10px;
+	display: block;
+	position: absolute;
+	top: 15%;
+	left: 25%;
+	background: white;
+	opacity: 1.0;
+	height: 400px;
+	width: 600px;
+	z-index: 150;
+	border: 2pt solid black;
+}
+
+.main {
+	z-index: 50;
+}
+
+
+.lightBoxRight {
+	margin-left: 20px;
+	display: block;
+	float: right;
+	width: 300px;
+}
+
+.lightBoxLeft {
+	margin-left: 20px;
+	display: block;
+	width: 200px;
+
+}
+
+.lightBoxHeader {
+	margin: 25px 0px 20px 0px;
+	padding: 10px 10px 10px 20px;
+	background: lightgrey;
+}
+
+.sectionHead {
+	display: block;
+	padding: 20px;
+	background: lightgrey;
+}
+
+#lightboxClose {
+	width: 30px;
+	color: white;
+	background: #008cba;
+	border: 1px solid #0079a1;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+.detailsLabel {
+	font-weight: bold;
+	font-size: 10pt;
+}
+
+.value {
+	font-size: 8pt;
+}
+
+.lightBoxLeft {
+	width: 250px;
+	float: left;
+}
+
+.lightBoxRight {
+	width: 250px;
+	float: right;
+}
+
+.heading {
+	font-weight: bold;
+}
+
