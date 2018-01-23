@@ -1,71 +1,17 @@
 
 
 
-.overlay {
-	z-index: 100;
-}
-
 .overlayBackground {
 	display: block;
 	position: fixed;
 	top: 0px;
 	left: 0px;
-	height: 100%;
-	width: 100%;
-	z-index: 150;
-	background: black;
-	opacity: 0.75;
-}
 
-.lightBox {
-	display: block;
-	position: fixed;
-	top: 200px;
-	left: 300px;
-	height: 600px;
-	width: 1200px;
-	border: 2px solid black;
-	background: white;
-	z-index: 200;
-	padding: 20px;
-}
-
-#lightboxClose {
-	border: 1px solid #0079a1;
-	background-color: #008cba;
-	color: #fff;
-	top: 0px;
-	right: 0px;
-	width: 25px;
-}
-
-.lightBoxHeader {
-	background: darkgrey;
-	margin-top: 25px;
-}
-
-.lightBoxRight {
-	display: block;
-	float: right;
-	width: 500px;
-}
-
-.lightBoxLeft {
-	display: block;
-	width: 500px;
-}
-
-.detailsLabel {
-	font-size: 10pt
-	font-weight: bold;
 }
 
 .value {
 	font-size: 8pt;
 }
 
-.main {
-	z-index: 50;
-	padding: 20px;
 }
 
