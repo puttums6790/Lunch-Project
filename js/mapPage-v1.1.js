@@ -48,12 +48,14 @@
             createMarker(results[i], label);
 
             $("#well").append(
-            	"<h2>" + label + ": " + results[i].name + "</h2>" +
-            	"<p><strong>Rating: </strong>" + results[i].rating + "</p>" +
-            	"<p><strong>Price Level: </strong>" + results[i].price_level + "</p>" +
-            	"<p><strong>Address: </strong>" + results[i].vicinity + "</p>" +
-            	"<button id='" + id + "'>Select Restaurant</button>" +
-            	"<br>");
+              "<div class='restitem'><h2>" + label + ": " + results[i].name + "</h2>" +
+              "<p><strong>Rating: </strong>" + results[i].rating + "/5</p>" +
+              "<p><strong>Price Level: </strong>" + results[i].price_level + "</p>" +
+              "<p><strong>Address: </strong>" + results[i].vicinity + "</p>" +
+              
+              "<button id='" + id + "' class='btn btn-primary'>Select Restaurant</button>" +
+
+              "<div class='clearfix'></div></div>");
 
             createClickEvent(id, i);
 
@@ -116,5 +118,8 @@
 
       });
 
-
+$(".close").on('click', function() {
+  
+    $('.overlay').hide();
+})
 

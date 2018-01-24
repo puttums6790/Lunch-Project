@@ -10,11 +10,12 @@
 
   <!-- Local CSS file -->
   <link rel="stylesheet" href="css/FindGroup.css">
+  <link rel="stylesheet" type="text/css" href="css/myGroups.css">
 
 </head>
     
     
-<body>  
+<body class="findGroupBody">  
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Let's Do Lunch</a>
@@ -37,7 +38,11 @@
           <a class="nav-link" href="myGroups.html">My Groups</a>
         </li>
       </ul>
-      
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item">
+          <a id="loginLink" class="nav-link" href="#"></a>
+        </li>
+      </ul>
     </div>
   </nav>
 
@@ -139,6 +144,7 @@
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
     <!-- local JS script for this page -->
     <script src="js/FindGroup.js"></script>
+    <script src="js/login.js"></script>
   </script>
 </script>
 </body>
