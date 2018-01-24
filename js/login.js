@@ -67,7 +67,7 @@ function checkLogin(path) {
   //goes back to home page after submit button clicked on log in screen
   else {
     if(isLoggedIn) {
-      window.location = "Lunch.html";
+      window.location = "index.html";
     }
   }
 }
@@ -159,7 +159,7 @@ $("#loginLink").on("click", function(event) {
   //Clear localStorage
   sessionStorage.clear();
 
-  window.location = 'Lunch.html';
+  window.location = 'index.html';
 
   $("#loginLink").text("");
 
